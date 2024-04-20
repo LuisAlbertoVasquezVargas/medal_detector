@@ -1,13 +1,13 @@
-# Clone the YOLOv5 repository
+## Clone the YOLOv5 repository
 git clone https://github.com/ultralytics/yolov5
 cd yolov5
 
-# Install dependencies
+## Install dependencies
 pip install -r requirements.txt
 
-# Create datasets/dota folder
+## Create datasets/dota folder
 
-<!-- 
+```
 Create folder structure
 parent
 ├── yolov5
@@ -15,13 +15,13 @@ parent
     └── dota  ← put here the images and labels 
         └── images  
         └── labels
--->
+```
 
-# Label images with makesense.ai
+## Label images with makesense.ai
 
-# Fill up files to images and labels
+## Fill up files to images and labels
 
-# Add the file yolov5/data/dota.yaml
+## Add the file yolov5/data/dota.yaml
 
 ```yaml
 path: ../datasets/dota # dataset root dir
@@ -43,8 +43,10 @@ names:
 
 ```
 
-# Train the model
+## Train the model
 
+```
 python train.py --epochs 300 --data dota.yaml --weights yolov5s.pt
 
 python detect.py --weights runs/train/exp/weights/best.pt --conf 0.40 --iou 0.01 --source trainning/match1.jpg
+```

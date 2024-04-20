@@ -1,3 +1,5 @@
+Based on: [youtube](https://www.youtube.com/watch?v=GRtgLlwxpc4&ab_channel=DeepLearning)
+
 ## Clone the YOLOv5 repository
 git clone https://github.com/ultralytics/yolov5
 cd yolov5

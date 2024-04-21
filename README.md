@@ -1,4 +1,5 @@
 ### Intro
+
 Based on: [youtube](https://www.youtube.com/watch?v=GRtgLlwxpc4&ab_channel=DeepLearning)
 
 [text](https://www.youtube.com/watch?v=fu2tfOV9vbY&ab_channel=RobMulla)
@@ -10,32 +11,32 @@ Based on: [youtube](https://www.youtube.com/watch?v=GRtgLlwxpc4&ab_channel=DeepL
 - Nvidia CUDA
 
 ## Clone THIS repo
-´´´
+```
 git clone https://github.com/LuisAlbertoVasquezVargas/medal_detector.git
 cd medal_detector
-´´´
+```
 
 ## Clone the YOLOv5 repository
-´´´
+```
 git clone https://github.com/ultralytics/yolov5
-´´´
+```
 
 ## Install dependencies
-´´´
+```
 cd yolov5
 pip install -r requirements.txt
-´´´
+```
 
 ## Activate Conda
-´´´
+```
 conda create -n yolov5-env python=3.11
 conda activate yolov5-env
-´´´
+```
 
 ## Make sure cuda is available
-´´´
+```python
 python -c "import torch; print(torch.cuda.is_available())"
-´´´
+```
 
 ## Create datasets/dota folder
 

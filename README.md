@@ -1,11 +1,33 @@
+### Intro
 Based on: [youtube](https://www.youtube.com/watch?v=GRtgLlwxpc4&ab_channel=DeepLearning)
 
+## Tools Needed
+- Git
+- Python & pip
+- Anaconda 
+
+## Clone THIS repo
+´´´
+git clone https://github.com/LuisAlbertoVasquezVargas/medal_detector.git
+cd medal_detector
+´´´
+
 ## Clone the YOLOv5 repository
+´´´
 git clone https://github.com/ultralytics/yolov5
-cd yolov5
+´´´
 
 ## Install dependencies
+´´´
+cd yolov5
 pip install -r requirements.txt
+´´´
+
+## Activate Conda
+´´´
+conda create -n yolov5-env python=3.11
+conda activate yolov5-env
+´´´
 
 ## Create datasets/dota folder
 

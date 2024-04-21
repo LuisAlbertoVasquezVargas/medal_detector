@@ -62,7 +62,7 @@ parent
         └── labels
 ```
 
-## Label images with makesense.ai
+## Label images with makesense.ai [https://makesense.ai/]
 
 ## Fill up files to images and labels
 
@@ -96,6 +96,11 @@ python train.py --epochs 800 --data dota.yaml --weights yolov5n.pt --batch-size 
 
 python detect.py --weights runs/train/exp3/weights/best.pt --conf 0.40 --iou 0.01 --source trainning/match2.jpg
 
-# small model
+# small model 535 epochs completed in 0.350 hours.
 python train.py --epochs 1600 --data dota.yaml --weights yolov5s.pt --batch-size -1
+
+python detect.py --weights runs/train/exp5/weights/best.pt --conf 0.40 --iou 0.01 --source trainning/match2.jpg
+
+# medium model NOT WORKING
+python train.py --epochs 1600 --patience 200 --data dota.yaml --weights yolov5s.pt --batch-size -1
 ```

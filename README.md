@@ -10,30 +10,42 @@ Based on: [youtube](https://www.youtube.com/watch?v=GRtgLlwxpc4&ab_channel=DeepL
 - Anaconda (Conda)
 - Nvidia CUDA
 
-## Clone THIS repo
+## Current Setup
+- Operating System: Windows 10 Home 64-bit (10.0, Build 19045)
+- System Manufacturer: Gigabyte Technology Co., Ltd.
+- System Model: B450M DS3H V2
+- Processor: AMD Ryzen 7 5700X 8-Core Processor (16 CPUs) ~3.4GHz
+- Memory: 16384MB RAM
+- Card name: NVIDIA GeForce GTX 1650 SUPER
+
+## Clone THIS repo and go to root
 ```bash
 git clone https://github.com/LuisAlbertoVasquezVargas/medal_detector.git
 cd medal_detector
 ```
 
-## Clone the YOLOv5 repository
+## Clone the YOLOv5 repository (in root)
 ```bash
 git clone https://github.com/ultralytics/yolov5
 ```
 
-## Install dependencies
+## Activate Conda (in /yolov5)
 ```bash
-cd yolov5
+conda create -n yolov5-env-2 python=3.11
+conda activate yolov5-env-2
+```
+
+## Install dependencies (in /yolov5)
+```bash
 pip install -r requirements.txt
 ```
-
-## Activate Conda
+## Install pytorch (in /yolov5)
+[pytorch](https://pytorch.org/get-started/locally/)
 ```bash
-conda create -n yolov5-env python=3.11
-conda activate yolov5-env
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 ```
 
-## Make sure cuda is available
+## Make sure cuda is available (in /yolov5)
 ```bash
 python -c "import torch; print(torch.cuda.is_available())"
 ```
@@ -76,10 +88,10 @@ names:
 
 ```
 
-## Train the model
+## Train the model (in /yolov5)
 
 ```bash
-python train.py --epochs 800 --data dota.yaml --weights yolov5n.pt --batch-size -1
+python train.py --epochs 1600 --data dota.yaml --weights yolov5n.pt --batch-size -1
 
 python detect.py --weights runs/train/exp13/weights/best.pt --conf 0.40 --iou 0.01 --source trainning/match1.jpg
 ```

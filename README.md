@@ -1,10 +1,13 @@
 ### Intro
 Based on: [youtube](https://www.youtube.com/watch?v=GRtgLlwxpc4&ab_channel=DeepLearning)
 
+[text](https://www.youtube.com/watch?v=fu2tfOV9vbY&ab_channel=RobMulla)
+
 ## Tools Needed
 - Git
 - Python & pip
-- Anaconda 
+- Anaconda (Conda)
+- Nvidia CUDA
 
 ## Clone THIS repo
 ´´´
@@ -27,6 +30,11 @@ pip install -r requirements.txt
 ´´´
 conda create -n yolov5-env python=3.11
 conda activate yolov5-env
+´´´
+
+## Make sure cuda is available
+´´´
+python -c "import torch; print(torch.cuda.is_available())"
 ´´´
 
 ## Create datasets/dota folder
@@ -70,7 +78,7 @@ names:
 ## Train the model
 
 ```
-python train.py --epochs 300 --data dota.yaml --weights yolov5s.pt
+python train.py --epochs 800 --data dota.yaml --weights yolov5n.pt --batch-size -1
 
-python detect.py --weights runs/train/exp/weights/best.pt --conf 0.40 --iou 0.01 --source trainning/match1.jpg
+python detect.py --weights runs/train/exp13/weights/best.pt --conf 0.40 --iou 0.01 --source trainning/match1.jpg
 ```

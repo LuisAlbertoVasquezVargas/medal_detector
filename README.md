@@ -2,7 +2,7 @@
 
 Based on: [youtube](https://www.youtube.com/watch?v=GRtgLlwxpc4&ab_channel=DeepLearning)
 
-[text](https://www.youtube.com/watch?v=fu2tfOV9vbY&ab_channel=RobMulla)
+[youtube](https://www.youtube.com/watch?v=fu2tfOV9vbY&ab_channel=RobMulla)
 
 ## Tools Needed
 - Git
@@ -11,30 +11,30 @@ Based on: [youtube](https://www.youtube.com/watch?v=GRtgLlwxpc4&ab_channel=DeepL
 - Nvidia CUDA
 
 ## Clone THIS repo
-```
+```bash
 git clone https://github.com/LuisAlbertoVasquezVargas/medal_detector.git
 cd medal_detector
 ```
 
 ## Clone the YOLOv5 repository
-```
+```bash
 git clone https://github.com/ultralytics/yolov5
 ```
 
 ## Install dependencies
-```
+```bash
 cd yolov5
 pip install -r requirements.txt
 ```
 
 ## Activate Conda
-```
+```bash
 conda create -n yolov5-env python=3.11
 conda activate yolov5-env
 ```
 
 ## Make sure cuda is available
-```python
+```bash
 python -c "import torch; print(torch.cuda.is_available())"
 ```
 
@@ -78,7 +78,7 @@ names:
 
 ## Train the model
 
-```
+```bash
 python train.py --epochs 800 --data dota.yaml --weights yolov5n.pt --batch-size -1
 
 python detect.py --weights runs/train/exp13/weights/best.pt --conf 0.40 --iou 0.01 --source trainning/match1.jpg

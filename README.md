@@ -91,7 +91,11 @@ names:
 ## Train the model (in /yolov5)
 
 ```bash
-python train.py --epochs 1600 --data dota.yaml --weights yolov5n.pt --batch-size -1
+# nano model 0.25 Hours
+python train.py --epochs 800 --data dota.yaml --weights yolov5n.pt --batch-size -1
 
-python detect.py --weights runs/train/exp13/weights/best.pt --conf 0.40 --iou 0.01 --source trainning/match1.jpg
+python detect.py --weights runs/train/exp3/weights/best.pt --conf 0.40 --iou 0.01 --source trainning/match2.jpg
+
+# small model
+python train.py --epochs 1600 --data dota.yaml --weights yolov5s.pt --batch-size -1
 ```
